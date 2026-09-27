@@ -36,3 +36,21 @@ python plot_ultimate_tsp.py
 
 ## 📄 License
 This project is licensed under the MIT License.
+
+
+## 🚀 NEW: Real-Life Logistics DP Solver (C++ & Python)
+Standard TSP for 64 districts uses a 2-opt heuristic because an exact calculation using Dynamic Programming takes O(N^2 * 2^N) time (mathematically impossible for N=64).
+
+To demonstrate a **real-life competitive programming / logistics solution**, we created a C++ Dynamic Programming engine (cpp_solver/tsp_dp.cpp) based on the **Held-Karp Algorithm**.
+
+It calculates the absolute perfect delivery route for **15 Major Commercial Hubs** in Bangladesh (Dhaka, Chattogram, Sylhet, etc.).
+1. The Python script (cpp_solver/real_life_delivery.py) fetches the real OSRM driving matrix.
+2. It compiles and feeds the matrix to the C++ DP engine.
+3. The C++ engine uses Bitmask DP to find the exact shortest path in milliseconds.
+4. Python generates the final map (d_logistics_real_life_route.html).
+
+**Run the Real-Life Hub Solver:**
+`ash
+cd cpp_solver
+python real_life_delivery.py
+`
