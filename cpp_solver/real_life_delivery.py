@@ -1,4 +1,4 @@
-﻿import folium
+import folium
 import requests
 import json
 import subprocess
@@ -61,7 +61,7 @@ def plot_route(optimal_path):
     geometry = res["routes"][0]["geometry"]["coordinates"]
     route_points = [(lat, lon) for lon, lat in geometry]
     
-    m = folium.Map(location=[23.6850, 90.3563], zoom_start=7, tiles='CartoDB Positron')
+    m = folium.Map(location=[23.6850, 90.3563], zoom_start=7, tiles='https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', attr='Esri')
     
     folium.PolyLine(route_points, weight=5, color="blue", opacity=0.8).add_to(m)
     
