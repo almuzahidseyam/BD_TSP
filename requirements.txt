@@ -1,0 +1,5 @@
+folium
+numpy
+scipy
+geopy
+requests
